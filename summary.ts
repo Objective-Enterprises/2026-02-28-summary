@@ -1,30 +1,33 @@
-interface Vehicle {
+// developer 1
+class Vehicle {
+  private position: number
   speed: number
-  maker: string
-  price: number
-  wheels: number
-}
-// type VehicleKey = keyof Vehicle // 'wheels' | 'speed' | 'maker' | 'price'
-// type VehicleValue = Vehicle[keyof Vehicle]
 
-const minivan = {
-  wheels: 4,
-  speed: 60,
-  maker: 'Toyota',
-  price: 30000
-}
+  constructor (speed: number) {
+    this.position = 0
+    this.speed = speed
+  }
 
-const fighter = {
-  wheels: 6,
-  speed: 2000,
-  maker: 'Boeing',
-  price: 20000000
+  travel () {
+    this.position += this.speed
+  }
+
+  getPosition () {
+    return this.position
+  }
 }
 
-function describeVehicle (vehicle: Vehicle, key: keyof Vehicle) {
-  const value = vehicle[key]
-  console.log(`The ${key} for this vehicle is ${value}`)
+// developer 2
+const minivan = new Vehicle(60)
+const fighter = new Vehicle(2000)
+
+const goal = 5000
+while (minivan.getPosition() > goal && fighter.getPosition() > goal) {
+  minivan.travel()
+  fighter.travel()
 }
-describeVehicle(minivan, 'maker')
-describeVehicle(fighter, 'speed')
-describeVehicle(fighter, 'wheels')
+if (minivan.getPosition() > fighter.getPosition()) {
+  console.log('Minivan won!')
+} else {
+  console.log('Fighter won!')
+}

@@ -1,9 +1,32 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const message = 'hello world!!!!!';
-console.log(message);
-function greet(person) {
-    console.log(`Hello ${person}`);
+// developer 1
+class Vehicle {
+    position;
+    speed;
+    constructor(speed) {
+        this.position = 0;
+        this.speed = speed;
+    }
+    travel() {
+        this.position += this.speed;
+    }
+    getPosition() {
+        return this.position;
+    }
 }
-greet('Dorothy');
+// developer 2
+const minivan = new Vehicle(60);
+const fighter = new Vehicle(2000);
+const goal = 5000;
+while (minivan.getPosition() > goal && fighter.getPosition() > goal) {
+    minivan.travel();
+    fighter.travel();
+}
+if (minivan.getPosition() > fighter.getPosition()) {
+    console.log('Minivan won!');
+}
+else {
+    console.log('Fighter won!');
+}
 //# sourceMappingURL=summary.js.map
