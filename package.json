@@ -1,0 +1,24 @@
+{
+  "name": "2026-02-18-summary",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx tsc && node dist/summary.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Objective-Enterprises/2026-02-28-summary.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Objective-Enterprises/2026-02-28-summary/issues"
+  },
+  "homepage": "https://github.com/Objective-Enterprises/2026-02-28-summary#readme",
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
