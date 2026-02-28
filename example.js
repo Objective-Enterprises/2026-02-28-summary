@@ -12,8 +12,17 @@ const fighter = {
 
 function describeVehicle (vehicle, key) {
   const value = vehicle[key]
-  console.log(`The ${key} for this vehicle is ${value}`)
+  return value
 }
-describeVehicle(minivan, 'maker')
-describeVehicle(fighter, 'speed')
-describeVehicle(fighter, 'price')
+
+const minivanMaker = describeVehicle(minivan, 'maker')
+const fighterSpeed = describeVehicle(fighter, 'speed')
+
+function formatString(value) {
+  console.log(value.toUpperCase())
+}
+function formatNumber (value) {
+  console.log(value.toFixed(2))
+}
+formatString(minivanMaker)
+formatNumber(fighterSpeed)

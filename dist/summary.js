@@ -1,49 +1,26 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const bacon = {
-    maker: 'Hormel',
-    price: 5
+const minivan = {
+    wheels: 4,
+    speed: 60,
+    maker: 'Toyota'
 };
-// developer 1
-class Vehicle {
-    // maker: string
-    position;
-    speed;
-    constructor(speed) {
-        this.position = 0;
-        this.speed = speed;
-    }
-    travel() {
-        this.position += this.speed;
-    }
-    getPosition() {
-        return this.position;
-    }
+const fighter = {
+    wheels: 6,
+    speed: 2000,
+    maker: 'Boeing'
+};
+function describeVehicle(vehicle, key) {
+    return vehicle[key];
 }
-class Car extends Vehicle {
-    doors;
-    constructor(speed, doors) {
-        super(speed);
-        this.doors = doors;
-    }
+const minivanMaker = describeVehicle(minivan, 'maker');
+const fighterSpeed = describeVehicle(fighter, 'speed');
+function formatString(value) {
+    console.log(value.toUpperCase());
 }
-// developer 2
-const minivan = new Car(60, 6);
-minivan.doors;
-const fighter = new Vehicle(2000);
-const goal = 5000;
-while (minivan.getPosition() > goal && fighter.getPosition() > goal) {
-    minivan.travel();
-    fighter.travel();
+function formatNumber(value) {
+    console.log(value.toFixed(2));
 }
-if (minivan.getPosition() > fighter.getPosition()) {
-    console.log('Minivan won!');
-}
-else {
-    console.log('Fighter won!');
-}
-function describeProduct(product) {
-    console.log('This product was made by:', product.maker);
-}
-describeProduct(bacon);
+formatString(minivanMaker);
+formatNumber(fighterSpeed);
 //# sourceMappingURL=summary.js.map
